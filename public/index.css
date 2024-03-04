@@ -1,12 +1,28 @@
-.center {
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.abs-center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.text-center {
+.header {
     text-align: center;
+    padding-bottom: 16px;
 }
 
 .loading {
@@ -24,5 +40,100 @@
 
     100% {
         opacity: 0.2;
+    }
+}
+
+.menu {
+    padding: 10px;
+    margin: 0;
+}
+
+.theme-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.theme-item {
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: auto;
+    text-align: center;
+    word-break: break-all;
+    word-break: break-word;
+
+    color: #F6F5F5;
+    background-color: #5F5D9C;
+    text-decoration: none;
+    border-radius: 5px;
+
+    padding: 16px 4px;
+}
+
+.game-wrapper {
+    padding: 25px;
+    height: 100vh;
+}
+
+.word-card {
+    color: #F6F5F5;
+    background-color: #5F5D9C;
+    border-radius: 15px;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.result {
+    padding: 10px;
+    margin: 0;
+}
+
+.word-list {
+    padding: 20px 0;
+    display: grid;
+    gap: 5px;
+    margin: 0;
+}
+
+@media (min-width: 425px) {
+    .menu {
+        margin: 0 8%;
+    }
+    .result {
+        margin: 0 8%;
+    }
+}
+
+@media (min-width: 768px) {
+    .menu {
+        margin: 0 18%;
+    }
+    .result {
+        margin: 0 18%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu {
+        margin: 0 28%;
+    }
+    .result {
+        margin: 0 28%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .menu {
+        margin: 0 34%;
+    }
+    .result {
+        margin: 0 34%;
     }
 }

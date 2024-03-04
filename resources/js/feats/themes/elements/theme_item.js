@@ -8,17 +8,14 @@ import { Theme } from '../models/theme';
  */
 function createThemeItem(theme) {
     const themeItem = document.createElement('a');
+    themeItem.classList.add('theme-item');
+    themeItem.textContent = theme.name;
     themeItem.href = '';
 
     themeItem.onclick = () => {
         initGameScreen(theme);
         return false;
     };
-
-    const head = document.createElement('h4');
-    head.textContent = theme.name;
-
-    themeItem.appendChild(head);
 
     return themeItem;
 }

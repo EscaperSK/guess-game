@@ -1,5 +1,5 @@
 import { body } from '../../../core/providers/body_provider';
-import { initThemesScreen } from '../../themes/screens/themes_screen';
+import { createBackButton } from '../elements/back_button';
 
 /** @type {string[]} */
 let results = [];
@@ -20,28 +20,26 @@ export {
 function drawResultScreen() {
     body.replaceChildren();
 
-    const centerDiv = document.createElement('div');
-    centerDiv.classList.add('center');
+    const result = document.createElement('div');
+    result.classList.add('result');
 
     const h1 = document.createElement('h1');
     h1.textContent = 'Результаты';
-    centerDiv.appendChild(h1);
+    h1.classList.add('header');
 
+    result.appendChild(h1);
+    result.appendChild(createBackButton());
+
+    const wordList = document.createElement('div');
+    wordList.classList.add('word-list');
     for (const item of results) {
         const h4 = document.createElement('h4');
         h4.textContent = item;
-        centerDiv.appendChild(h4);
+        wordList.appendChild(h4);
     }
 
-    const a = document.createElement('a');
-    a.textContent = 'Вернуться на главную';
-    a.href = '';
-    a.onclick = () => {
-        initThemesScreen();
-        return false;
-    };
+    result.appendChild(wordList);
+    result.appendChild(createBackButton());
 
-    centerDiv.appendChild(a);
-
-    body.appendChild(centerDiv);
+    body.appendChild(result);
 }

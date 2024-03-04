@@ -20,19 +20,26 @@ export {
 function drawThemesScreen() {
     body.replaceChildren();
 
+    const menu = document.createElement('div');
+    menu.classList.add('menu');
+
     const h1 = document.createElement('h1');
+    h1.classList.add('header');
     h1.textContent = 'Темы';
-    body.appendChild(h1);
+    menu.appendChild(h1);
 
     iosDumbShit();
 
     const themeList = document.createElement('div');
+    themeList.classList.add('theme-list');
     for (const theme of themes) {
         const themeNode = createThemeItem(theme);
 
         themeList.appendChild(themeNode);
     }
-    body.appendChild(themeList);
+    menu.appendChild(themeList);
+
+    body.appendChild(menu);
 }
 
 async function iosDumbShit() {

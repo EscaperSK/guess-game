@@ -37,7 +37,7 @@ async function initGameScreen(theme) {
     usedItems = [];
 
     canSkip = true;
-    seconds = 2;
+    seconds = 180;
 
     drawGameScreen();
 }
@@ -49,22 +49,26 @@ export {
 async function drawGameScreen() {
     body.replaceChildren();
 
-    const centerDiv = document.createElement('div');
-    centerDiv.classList.add('center');
+    const game = document.createElement('div');
+    game.classList.add('game-wrapper');
+
+    const wordCard = document.createElement('div');
+    wordCard.classList.add('word-card');
+    game.appendChild(wordCard);
 
     h1 = document.createElement('h1');
     h1.textContent = 'Приготовьтесь';
 
     timer = document.createElement('h3');
-    timer.classList.add('text-center');
     timer.textContent = `${seconds}`;
 
-    centerDiv.appendChild(h1);
-    body.appendChild(centerDiv);
+    wordCard.appendChild(h1);
+    body.appendChild(game);
 
     await new Promise((r) => getReadyTimeout = setTimeout(r, 1000 * 3));
 
-    centerDiv.appendChild(timer);
+    wordCard.appendChild(document.createElement('br'));
+    wordCard.appendChild(timer);
 
     nextWord();
 

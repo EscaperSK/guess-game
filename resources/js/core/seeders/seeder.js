@@ -1,6 +1,9 @@
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { animeSeed } from './anime_seed';
+import { dotaSeed } from './dota_seed';
+import { lolSeed } from './lol_seed';
+import { mythSeed } from './myth_seed';
 import { programmingSeed } from './programming_seed';
 
 function seedAnime() {
@@ -13,7 +16,25 @@ function seedProgramming() {
     updateDoc(ref, { items: programmingSeed });
 }
 
+function seedLol() {
+    const ref = doc(db, 'themes', 'VP415OD8Imz2SfpJlZUK');
+    updateDoc(ref, { items: lolSeed });
+}
+
+function seedDota() {
+    const ref = doc(db, 'themes', 'hQKlqz3eOvf399lXTMb2');
+    updateDoc(ref, { items: dotaSeed });
+}
+
+function seedMyth() {
+    const ref = doc(db, 'themes', 'ck5DX1onTyZztwGn6nKW');
+    updateDoc(ref, { items: mythSeed });
+}
+
 export {
     seedAnime,
+    seedLol,
+    seedDota,
+    seedMyth,
     seedProgramming
 };

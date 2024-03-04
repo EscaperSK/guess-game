@@ -8,5 +8,12 @@
             "file": "${workspaceFolder}/public/index.html",
             "reAttach": true,
         },
+        {
+          "type": "chrome",
+          "request": "launch",
+          "name": "Launch Chrome index.html",
+          "file": "${workspaceFolder}/public/index.html",
+          "webRoot": "${workspaceFolder}"
+        },
     ]
 }
