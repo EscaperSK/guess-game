@@ -1,6 +1,7 @@
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { animeSeed } from './anime_seed';
+import { blizzardSeed } from './blizzard_seed';
 import { dotaSeed } from './dota_seed';
 import { lolSeed } from './lol_seed';
 import { mythSeed } from './myth_seed';
@@ -31,10 +32,16 @@ function seedMyth() {
     updateDoc(ref, { items: mythSeed });
 }
 
+function seedBlizzard() {
+    const ref = doc(db, 'themes', 'wrAlG30uJlEugjABLoA4');
+    updateDoc(ref, { items: blizzardSeed });
+}
+
 export {
     seedAnime,
-    seedLol,
+    seedBlizzard,
     seedDota,
+    seedLol,
     seedMyth,
     seedProgramming
 };
