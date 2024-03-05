@@ -67,7 +67,7 @@ async function drawGameScreen() {
 
     await new Promise((r) => getReadyTimeout = setTimeout(r, 1000 * 3));
 
-    wordCard.appendChild(document.createElement('br'));
+    wordCard.appendChild(document.createElement('p'));
     wordCard.appendChild(timer);
 
     nextWord();

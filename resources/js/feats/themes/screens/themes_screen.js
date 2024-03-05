@@ -20,6 +20,8 @@ export {
 function drawThemesScreen() {
     body.replaceChildren();
 
+    iosDumbShit();
+
     const menu = document.createElement('div');
     menu.classList.add('menu');
 
@@ -27,8 +29,6 @@ function drawThemesScreen() {
     h1.classList.add('header');
     h1.textContent = 'Темы';
     menu.appendChild(h1);
-
-    iosDumbShit();
 
     const themeList = document.createElement('div');
     themeList.classList.add('theme-list');

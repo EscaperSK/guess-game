@@ -9,11 +9,11 @@
             "reAttach": true,
         },
         {
-          "type": "chrome",
-          "request": "launch",
-          "name": "Launch Chrome index.html",
-          "file": "${workspaceFolder}/public/index.html",
-          "webRoot": "${workspaceFolder}"
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome index.html",
+            "file": "${workspaceFolder}/public/index.html",
+            "webRoot": "${workspaceFolder}"
         },
     ]
 }

@@ -1,5 +1,5 @@
 import { body } from '../../../core/providers/body_provider';
-import { createBackButton } from '../elements/back_button';
+import { createHomeButton } from '../elements/back_button';
 
 /** @type {string[]} */
 let results = [];
@@ -28,18 +28,19 @@ function drawResultScreen() {
     h1.classList.add('header');
 
     result.appendChild(h1);
-    result.appendChild(createBackButton());
+    result.appendChild(createHomeButton());
 
     const wordList = document.createElement('div');
     wordList.classList.add('word-list');
     for (const item of results) {
-        const h4 = document.createElement('h4');
-        h4.textContent = item;
-        wordList.appendChild(h4);
+        const word = document.createElement('h4');
+        word.classList.add('word');
+        word.textContent = item;
+        wordList.appendChild(word);
     }
 
     result.appendChild(wordList);
-    result.appendChild(createBackButton());
+    result.appendChild(createHomeButton());
 
     body.appendChild(result);
 }

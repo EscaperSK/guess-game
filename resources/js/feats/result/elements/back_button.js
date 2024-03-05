@@ -1,8 +1,9 @@
 import { initThemesScreen } from "../../themes/screens/themes_screen";
 
-function createBackButton() {
+function createHomeButton() {
     const button = document.createElement('a');
     button.textContent = 'Вернуться на главную';
+    button.classList.add('home-btn');
     button.href = '';
     button.onclick = () => {
         initThemesScreen();
@@ -13,5 +14,5 @@ function createBackButton() {
 }
 
 export {
-    createBackButton
+    createHomeButton
 };
