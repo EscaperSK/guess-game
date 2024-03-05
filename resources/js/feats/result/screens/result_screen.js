@@ -1,4 +1,5 @@
 import { body } from '../../../core/providers/body_provider';
+import { lockLandscape } from '../../../helpers/utils';
 import { createHomeButton } from '../elements/back_button';
 
 /** @type {string[]} */
@@ -9,6 +10,8 @@ let results = [];
  */
 function initResultScreen(items) {
     results = items;
+
+    lockLandscape(false);
 
     drawResultScreen();
 }

@@ -1,5 +1,5 @@
 import { body } from '../../../core/providers/body_provider';
-import { getRandomInt } from '../../../helpers/utils';
+import { getRandomInt, lockLandscape } from '../../../helpers/utils';
 import { initResultScreen } from '../../result/screens/result_screen';
 import { Theme } from '../../themes/models/theme';
 
@@ -38,6 +38,8 @@ async function initGameScreen(theme) {
 
     canSkip = true;
     seconds = 180;
+
+    lockLandscape();
 
     drawGameScreen();
 }
