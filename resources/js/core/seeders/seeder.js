@@ -5,6 +5,7 @@ import { blizzardSeed } from './blizzard_seed';
 import { dotaSeed } from './dota_seed';
 import { lolSeed } from './lol_seed';
 import { mythSeed } from './myth_seed';
+import { onePieceSeed } from './one_piece_seed';
 import { programmingSeed } from './programming_seed';
 
 function seedAnime() {
@@ -37,11 +38,17 @@ function seedBlizzard() {
     updateDoc(ref, { items: blizzardSeed });
 }
 
+function seedOnePiece() {
+    const ref = doc(db, 'themes', 'CAeXnS3utlDZyihNdKdq');
+    updateDoc(ref, { items: onePieceSeed });
+}
+
 export {
     seedAnime,
     seedBlizzard,
     seedDota,
     seedLol,
     seedMyth,
+    seedOnePiece,
     seedProgramming
 };
